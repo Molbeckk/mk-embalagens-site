@@ -1,0 +1,128 @@
+/* ==========================================================================
+   MK EMBALAGENS — TOKENS v5 · PALETA AZUL E BRANCO
+   Pedido do cliente: "cores mais claras, azul e branco pode ser, e pouco preto".
+   Ponto de partida: o azul do logo, #74B3F9 (29,3% da área), medido pelo
+   cores.py em mk-logo.jpg. Ele deixou de ser texto e virou FUNDO de faixa —
+   como texto ele dá 2,19 sobre branco e reprova.
+   Nenhum hex é preto. A tinta do site é #082857 (azul-700).
+
+   4 CORREÇÕES MEDIDAS sobre a especificação recebida — todas com o número:
+   ① borda de chip rgba(8,40,87,.14): COMPOSTA dá 1,32 no branco e 1,24 na
+     faixa. Reprova o mínimo 3,0 de componente. A borda passou a ser sólida,
+     --line #3879CA (4,42 / 4,18 / 3,81 / 3,31) e #082857 dentro da faixa (6,59).
+     O preenchimento .06 ficou como estava: é fill, não delimita nada.
+   ② --ink-2 #4D5155 sobre a faixa #74B3F9 = 3,64. Reprova. Dentro da faixa o
+     texto secundário é #123E75 (4,85).
+   ③ --line #3879CA sobre a faixa = 2,01. Reprova. Dentro da faixa, #082857.
+   ④ estados :disabled não vinham na spec e reprovavam nos dois temas:
+     light #5C7291 (branco 4,92) · dark #7096C9 com rótulo #082857 (4,75).
+   ========================================================================== */
+
+:root{
+  /* ---------- SUPERFÍCIES (claro domina; zero faixa escura grande) ------ */
+  --surface:    #FFFFFF;   /* fundo dominante                               */
+  --surface-2:  #F5F9FE;   /* seção alternada                               */
+  --surface-3:  #E2F0FE;   /* azul-50 · hero e bloco de destaque            */
+  --surface-4:  #C9E2FB;   /* azul-100 · bloco mais marcado                 */
+  --band:       #74B3F9;   /* O AZUL DO LOGO — fundo de faixa, nunca texto  */
+  --deep:       #082857;   /* o ÚNICO ponto escuro do site: o rodapé        */
+
+  /* ---------- TINTA ----------------------------------------------------- */
+  --ink:        #082857;   /* 14,47 branco · 13,69 s2 · 12,49 s3 · 10,85 s4 */
+                           /* e 6,59 sobre a faixa. Não existe preto aqui.  */
+  --ink-2:      #4D5155;   /*  8,00 · 7,57 · 6,91 · 6,00                    */
+                           /* PROIBIDO na faixa: 3,64 reprova               */
+  --ink-band:   #082857;   /* 6,59 sobre a faixa                            */
+  --ink-2-band: #123E75;   /* 4,85 sobre a faixa (substitui o --ink-2)      */
+  --ink-deep:   #FFFFFF;   /* 14,47 sobre o rodapé                          */
+  --ink-2-deep: #B7C9E0;   /*  8,57 sobre o rodapé                          */
+
+  /* ---------- AÇÃO ------------------------------------------------------ */
+  --cta:        #1B58AD;   /* 6,89 · 6,52 · 5,95 · 5,17 · 3,14 na faixa     */
+  --cta-hover:  #0F3F86;   /* 10,12 · 9,57 · 8,73 · 7,59                    */
+  --cta-ink:    #FFFFFF;   /* 6,89 sobre o CTA · 10,12 sobre o hover        */
+  --cta-off:    #5C7291;   /* :disabled · branco 4,92 · vs superfície 4,24+ */
+  --accent:     #1B58AD;   /* olho de seção e link de texto                 */
+
+  /* ---------- LINHAS ---------------------------------------------------- */
+  --line:       #3879CA;   /* FUNCIONAL — input, card, chip, tabela         */
+                           /* 4,42 · 4,18 · 3,81 · 3,31 (todas passam o 3)  */
+                           /* PROIBIDA na faixa: 2,01 reprova               */
+  --hairline:   #DCE9F7;   /* DECORATIVA — 1,23. Só linha interna de tabela */
+
+  /* ---------- FOCO ------------------------------------------------------ */
+  --focus:      #1B58AD;   /* 6,89 · 6,52 · 5,95 · 5,17                     */
+
+  /* ---------- WHATSAPP -------------------------------------------------- */
+  --wa:         #25D366;   /* verde de marca — sozinho reprova (1,71)       */
+  --wa-ring:    #004B26;   /* anel interno · 10,32 branco … 4,70 na faixa   */
+  --wa-halo:    #FFFFFF;   /* anel externo · 14,47 sobre o rodapé escuro    */
+  --wa-ink:     #062B14;   /* ícone · 7,77 sobre o verde                    */
+
+  /* ---------- TIPOGRAFIA ------------------------------------------------ */
+  --font-display:"Poppins","Century Gothic","Futura","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+              "Helvetica Neue",Arial,sans-serif;
+  --h1:   clamp(2.375rem, 1.45rem + 3.85vw, 4.5rem);    /* 38 → 72 px */
+  --h2:   clamp(1.75rem,  1.20rem + 2.30vw, 3rem);      /* 28 → 48 px */
+  --h3:   clamp(1.1875rem,1.06rem + 0.55vw, 1.5rem);    /* 19 → 24 px */
+  --lead: clamp(1.125rem, 1.03rem + 0.40vw, 1.375rem);  /* 18 → 22 px */
+  --body: clamp(1.0625rem,1.02rem + 0.20vw, 1.125rem);  /* 17 → 18 px */
+  --lh-display:1.08; --lh-h2:1.14; --measure:64ch;
+
+  /* ---------- RAIO · RITMO · ELEVAÇÃO ----------------------------------- */
+  --r-6:6px; --r-8:8px; --r-12:12px; --r-16:16px; --r-pill:999px;
+  --pad-sec:clamp(88px,6vw + 40px,160px);
+  --pad-sec-lg:clamp(112px,9vw + 40px,208px);
+  --gap:24px; --maxw:1180px;
+  --shadow:0 1px 10px rgba(8,40,87,.08);   /* a única sombra do site        */
+}
+
+/* ==========================================================================
+   ESCOPOS DE SUPERFÍCIE — o mesmo componente medido de novo em cada fundo.
+   Sem isto, o botão e a borda caem no estilo do papel e somem.
+   ========================================================================== */
+.on-band{                       /* faixa #74B3F9 */
+  --ink:#082857; --ink-2:#123E75;
+  --line:#082857;               /* o #3879CA reprova aqui (2,01)            */
+  --accent:#082857;             /* o #1B58AD reprova como texto aqui (3,14) */
+  --focus:#082857;              /* 6,59                                     */
+  --surface:#FFFFFF;            /* cards brancos dentro da faixa            */
+}
+.on-deep{                       /* rodapé #082857 — o único ponto escuro    */
+  --ink:#FFFFFF; --ink-2:#B7C9E0;
+  --line:#6B87AC;               /* 3,92                                     */
+  --accent:#69A4E7;             /* 5,56                                     */
+  --focus:#69A4E7;
+  --cta:#69A4E7; --cta-ink:#082857; --cta-hover:#8FBDF0;  /* 5,56 · 7,38    */
+}
+
+/* ==========================================================================
+   DARK MODE — invertido e REMEDIDO, não espelhado.
+   ========================================================================== */
+@media (prefers-color-scheme:dark){
+  :root{
+    --surface:#0B1A2E; --surface-2:#0F2440; --surface-3:#143055; --surface-4:#1A3D6B;
+    --band:#74B3F9;             /* a faixa continua a cor do logo           */
+    --deep:#050F1C;
+    --ink:#E2F0FE;              /* 15,09 · 13,46 · 11,45 · 9,42             */
+    --ink-2:#A9C2DC;            /*  9,52 ·  8,49 ·  7,22 · 5,95             */
+    --ink-band:#082857; --ink-2-band:#123E75;   /* a faixa não muda         */
+    --cta:#69A4E7;              /* 6,71 · 5,99 · 5,09 · 4,19                */
+    --cta-ink:#082857;          /* 5,56 sobre o CTA                         */
+    --cta-hover:#8FBDF0;        /* 8,91 · rótulo #082857 = 7,38             */
+    --cta-off:#7096C9;          /* 5,74 vs página · rótulo #082857 = 4,75   */
+    --accent:#69A4E7;
+    --line:#7DAFED;             /* 7,68 · 6,85 · 5,83 · 4,80                */
+                                /* (o #5B84B8 caía para 2,83 no surface-4) */
+    --hairline:#1E3554;
+    --focus:#69A4E7;
+    --wa-halo:#E2F0FE;
+    --shadow:0 1px 10px rgba(0,0,0,.45);
+  }
+  .on-band{ --ink:#082857; --ink-2:#123E75; --line:#082857; --accent:#082857;
+            --focus:#082857; --surface:#FFFFFF;
+            --cta:#1B58AD; --cta-ink:#FFFFFF; --cta-hover:#0F3F86; }
+  .on-deep{ --ink:#E2F0FE; --ink-2:#A9C2DC; --line:#7DAFED; --accent:#69A4E7;
+            --focus:#69A4E7; --cta:#69A4E7; --cta-ink:#082857; --cta-hover:#8FBDF0; }
+}
