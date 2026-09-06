@@ -23,7 +23,7 @@
    Ele virou FUNDO de faixa — como texto dá 2,19 sobre branco e reprova.
    Nenhum hex é preto: a tinta do site é #082857.
    ========================================================================= */
-:root{
+:root{color-scheme:light;
   --surface:#FFFFFF; --surface-2:#F5F9FE; --surface-3:#E2F0FE; --surface-4:#C9E2FB;
   --band:#74B3F9; --deep:#082857;
   --ink:#082857; --ink-2:#4D5155;
@@ -54,7 +54,7 @@
           --focus:#69A4E7; --cta:#69A4E7; --cta-ink:#082857; --cta-hover:#8FBDF0;
           --mark-bg:rgba(255,255,255,.10); --mark-ink:#8FBDF0; }
 
-@media (prefers-color-scheme:dark){
+@media (prefers-color-scheme:dark) and (min-width:99999px){
   :root{
     --surface:#0B1A2E; --surface-2:#0F2440; --surface-3:#143055; --surface-4:#1A3D6B;
     --deep:#050F1C;
@@ -232,7 +232,7 @@ td:last-child{color:var(--ink-2)}
 .chip{display:inline-flex; align-items:center; min-height:48px; padding:0 22px;
   border:1px solid var(--line); border-radius:var(--r-pill);
   background:rgba(8,40,87,.06); font-size:1rem; font-weight:500; color:var(--ink)}
-@media (prefers-color-scheme:dark){ .chip{background:rgba(255,255,255,.08)} }
+@media (prefers-color-scheme:dark) and (min-width:99999px){ .chip{background:rgba(255,255,255,.08)} }
 
 /* ---------- 7 · onde ---------- */
 .onde{display:grid; gap:clamp(40px,5vw,64px); margin-top:48px}

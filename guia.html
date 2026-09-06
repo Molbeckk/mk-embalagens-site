@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* Mesmo sistema visual da home. Tokens idênticos aos de tokens.css. */
-:root{
+:root{color-scheme:light;
   --surface:#FFFFFF; --surface-2:#F5F9FE; --surface-3:#E2F0FE; --surface-4:#C9E2FB;
   --band:#74B3F9; --deep:#082857;
   --ink:#082857; --ink-2:#4D5155;
@@ -37,7 +37,7 @@
           --focus:#082857; --surface:#FFFFFF; }
 .on-deep{ --ink:#FFFFFF; --ink-2:#B7C9E0; --line:#6B87AC; --accent:#69A4E7;
           --focus:#69A4E7; --mark-bg:rgba(255,255,255,.10); --mark-ink:#8FBDF0; }
-@media (prefers-color-scheme:dark){
+@media (prefers-color-scheme:dark) and (min-width:99999px){
   :root{
     --surface:#0B1A2E; --surface-2:#0F2440; --surface-3:#143055; --surface-4:#1A3D6B;
     --deep:#050F1C; --ink:#E2F0FE; --ink-2:#A9C2DC;
@@ -106,7 +106,7 @@ section{padding-block:var(--pad-sec)}
 .idx a{display:inline-flex; align-items:center; min-height:48px; padding:0 20px;
   border:1px solid var(--line); border-radius:var(--r-pill); background:rgba(8,40,87,.06);
   font-size:.9375rem; font-weight:500; color:var(--ink); text-decoration:none}
-@media (prefers-color-scheme:dark){ .idx a{background:rgba(255,255,255,.08)} }
+@media (prefers-color-scheme:dark) and (min-width:99999px){ .idx a{background:rgba(255,255,255,.08)} }
 .idx a:hover{background:var(--surface-3)}
 /* blocos */
 .grid3{display:grid; gap:20px; margin-top:44px}
