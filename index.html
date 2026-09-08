@@ -111,8 +111,7 @@ section{padding-block:var(--pad-sec)}
 
 .eyebrow{
   display:inline-flex; align-items:center; gap:8px;
-  font-size:.8125rem; font-weight:600; letter-spacing:.10em; text-transform:uppercase;
-  color:var(--accent); margin-bottom:20px;
+  font-size:.9375rem; font-weight:600; letter-spacing:0; color:var(--accent); margin-bottom:20px;
 }
 .eyebrow::before{content:""; width:22px; height:2px; background:currentColor; border-radius:2px}
 
@@ -198,7 +197,7 @@ caption{caption-side:bottom; text-align:left; padding:16px 20px 0;
   font-size:.875rem; line-height:1.55; color:var(--ink-2); max-width:78ch}
 th,td{padding:14px 18px; text-align:left; border-bottom:1px solid var(--hairline)}
 thead th{background:var(--surface-3); color:var(--ink); font-weight:600;
-  font-size:.8125rem; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap}
+  font-size:.875rem; letter-spacing:0; white-space:nowrap}
 tbody tr:nth-child(even){background:var(--surface-2)}
 tbody tr:last-child td{border-bottom:0}
 td:first-child{font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap}
@@ -249,8 +248,7 @@ td:last-child{color:var(--ink-2)}
 @media(min-width:720px){ .cmp{grid-template-columns:1fr 1fr; gap:24px} }
 .cmp-c{background:var(--surface); border:1px solid var(--line);
   border-radius:var(--r-12); padding:clamp(24px,3vw,34px)}
-.cmp-t{font-size:.8125rem; letter-spacing:.08em; text-transform:uppercase;
-  color:#4D5155; font-weight:600}                    /* 8,00 no card branco */
+.cmp-t{font-size:.9375rem; letter-spacing:0; color:#4D5155; font-weight:600}                    /* 8,00 no card branco */
 .cmp-n{font-family:var(--font-display); font-weight:700;
   font-size:clamp(2rem,4vw,2.75rem); line-height:1.05; letter-spacing:-.03em;
   color:#082857; margin-top:10px}                    /* 14,47 no card branco */
@@ -276,8 +274,7 @@ td:last-child{color:var(--ink-2)}
 .shot{aspect-ratio:4/3; border:1px dashed var(--line); border-radius:var(--r-12);
   background:var(--surface-3); padding:28px; display:flex; flex-direction:column;
   justify-content:flex-end; gap:10px}
-.shot b{font-family:var(--font-display); font-size:.9375rem; letter-spacing:.06em;
-  text-transform:uppercase; color:var(--accent)}
+.shot b{font-family:var(--font-display); font-size:.9375rem; letter-spacing:0; color:var(--accent)}
 .shot p{font-size:.9375rem; color:var(--ink-2); max-width:44ch}
 .addr{margin-top:16px; font-size:var(--lead); line-height:1.45}
 
@@ -319,8 +316,7 @@ td:last-child{color:var(--ink-2)}
 .ft-grid{display:grid; gap:40px}
 @media(min-width:800px){ .ft-grid{grid-template-columns:1.4fr 1fr 1fr} }
 .ft .mono{background:#FFFFFF; color:#082857}
-.ft h3{font-size:.8125rem; letter-spacing:.10em; text-transform:uppercase;
-  color:var(--accent); margin-bottom:18px; font-weight:600}
+.ft h3{font-size:.9375rem; letter-spacing:0; color:var(--accent); margin-bottom:18px; font-weight:600}
 .ft address{font-style:normal; color:var(--ink-2); display:grid; gap:4px;
   font-size:.9375rem; line-height:1.6; overflow-wrap:anywhere}
 .ft address b{color:var(--ink); font-weight:600}
@@ -610,14 +606,14 @@ body.rolou .wa{opacity:1; visibility:visible; transform:none}
 
     <div class="cmp">
       <div class="cmp-c">
-        <p class="cmp-t">Proposta A · 40×50</p>
+        <p class="cmp-t">Proposta A, sacola 40×50</p>
         <p class="cmp-n">5,83 <small>g por sacola</small></p>
-        <p class="cmp-d">fardo de 2,50 kg · 429 unidades</p>
+        <p class="cmp-d">fardo de 2,50 kg com 429 unidades</p>
       </div>
       <div class="cmp-c">
-        <p class="cmp-t">Proposta B · 40×50</p>
+        <p class="cmp-t">Proposta B, sacola 40×50</p>
         <p class="cmp-n">8,62 <small>g por sacola</small></p>
-        <p class="cmp-d">fardo de 5,00 kg · 580 unidades</p>
+        <p class="cmp-d">fardo de 5,00 kg com 580 unidades</p>
       </div>
       <p class="verdict">Mesma medida, mesmo nome: B leva 48% mais plástico por sacola.</p>
     </div>
@@ -775,7 +771,7 @@ body.rolou .wa{opacity:1; visibility:visible; transform:none}
         <address style="margin-top:20px">
           <b>MK - EMBALAGENS PLASTICAS LTDA</b>
           <span>CNPJ 22.794.237/0001-24</span>
-          <span>Rua São João, 230 · Itaquaquecetuba/SP · CEP 08599-470</span>
+          <span>Rua São João, 230, Itaquaquecetuba/SP, CEP 08599-470</span>
         </address>
         <a class="ft-tel" href="tel:+551124800556">(11) 2480-0556</a>
       </div>
